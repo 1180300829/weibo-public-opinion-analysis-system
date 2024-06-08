@@ -1,4 +1,5 @@
-# coding=gbk
+# -*- coding: utf-8 -*-
+
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
@@ -40,7 +41,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 temp_filename = self.lineEdit.text()
                 book_name_xls = "weibodata/" + temp_filename + ".xls"  # 填写你想存放excel的路径，没有文件会自动创建
                 sheet_name_xls = '微博数据'  # sheet表名
-                maxWeibo = 20  # 设置最多多少条微博
+                maxWeibo = 15000# 设置最多多少条微博
                 keywords = ["#" + temp_filename + "#"]  # 此处可以设置多个话题，#必须要加上
                 for keyword in keywords:
                     spider(username, password, driver, book_name_xls, sheet_name_xls, keyword, maxWeibo)
@@ -168,3 +169,4 @@ if __name__ == '__main__':
     ui.setWindowTitle('微博舆情分析')
     ui.show()
     sys.exit(app.exec_())
+
